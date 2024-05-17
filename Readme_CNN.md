@@ -20,6 +20,8 @@ Test accuracy: 0.97079998254776
 
 只能說經過很好ETL，會讓MNIST数据集結果不差，但也有可能是圖片很簡單。
 
+![70ac4b7eadf3a0b14cd5e71824d2ce6](https://github.com/joycelai140420/Project/assets/167413809/7c41068d-6cd4-4009-8404-93fc616ef020)
 
 
-再來看預測的結果
+再來看預測的結果，Label 5 預測成6，這樣的錯誤。但大部分還是對的。
+![image](https://github.com/joycelai140420/Project/assets/167413809/4a403d68-f59a-4a1d-b9dd-766575e944bc)
