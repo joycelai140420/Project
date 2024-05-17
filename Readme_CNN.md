@@ -24,6 +24,7 @@ Test accuracy: 0.97079998254776
 
 
 再來看預測的結果，Label 5 預測成6，這樣的錯誤。但大部分還是對的。
+
 ![image](https://github.com/joycelai140420/Project/assets/167413809/4a403d68-f59a-4a1d-b9dd-766575e944bc)
 
 普通的CNN架構與設計（參考Medium_CNN.py）
@@ -47,6 +48,7 @@ Test accuracy: 0.9934999942779541
 ![image](https://github.com/joycelai140420/Project/assets/167413809/d663ebc1-7173-48c7-92b6-dd03d335b99a)
 
 数字辨识也正确
+
 ![image](https://github.com/joycelai140420/Project/assets/167413809/202f58a0-e481-47e4-8032-a7620908de08)
 
 進階的CNN架構與設計（參考Hard_CNN.py）
@@ -69,6 +71,7 @@ Test accuracy: 0.9934999942779541
 其中一个Initial是没有包含未标记数据的伪标签，Final开头是包含未标记数据的伪标签进行训练。包含未标记数据的标签进行训练，不管是精确度跟loss 在低的epoch都有很好的表现。
 
 ![image](https://github.com/joycelai140420/Project/assets/167413809/52dd7132-e239-4a55-b33c-d49f33f8a7bb)
+
 数字辨识也正确
 
 ![image](https://github.com/joycelai140420/Project/assets/167413809/082a2f6f-380b-4f62-b64a-d4253655fc71)
