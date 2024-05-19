@@ -29,19 +29,26 @@
 
         1.训练一个Transformer模型。
 
-        2.应用回译（Back-translation）进一步提升性能。
+        2.应用回译（Back-translation）进一步提升性能。为了加速，减少伪数据的量，也减少遍历伪标签的数量，使用多进程并减少重新训练的轮数。也就是说我从50%调到5%，int(0.05 * len(X_test))，还增加了batch_size=32, max_workers=32(主要看机器爆不爆内存运算快一点)，最后只用一个epoch，实际这样效果不一定很好，主要是花钱。但我又发现这样跑到最后内存还是会爆掉，但我看CPU的RAM还有50G GPU只剩2G，所以我采取的做法是生成伪标签时候来使用CPU进行预测，这样可以避免占用GPU内存。
 
         3.评估Transformer模型的性能，并演示它的翻译结果。
 
 结果：
-
-        我只执行一个epoch  
-
-        loss: 0.2516 - accuracy: 0.9740
-
-        Total params: 22782551 (86.91 MB)
-
-        Trainable params: 22782551 (86.91 MB)
-
-
+        Transformer模型:
         
+                我只执行一个epoch  
+        
+                loss: 0.2516 - accuracy: 0.9740
+
+                val_loss: 0.1871 - val_accuracy: 0.9759
+
+                Total params: 22782551 (86.91 MB)
+
+                Trainable params: 22782551 (86.91 MB)
+
+        应用回译（Back-translation）:
+
+                
+
+
+        我已经将max_workers改成108，现在我想把模型保存并下载以后可以重覆使用，你可以教我怎么做吗？还有下载完，可以顺便叫我怎么call模型？例如我输入一串字「哈罗！前任」然后call模型后输出「hi!EX」
