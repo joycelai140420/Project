@@ -23,7 +23,7 @@
 
         2,数据生成器：分批加载数据以减少内存占用
         
-一直降到 embedding_dim = 32，units = 64跟最后run epochs=5才跑起来，但因为太久导致 colab 只保留最长24小时（还在后台），12小时消失前台，最后断线，导致没跑完，而我终究是花了100元，1个RNN epochs跑2小时，不想再跑，有兴趣看两个模型比较结果可以参考中翻英_RNN_Transformer.ipynb。所以只实作Transformer部分，也就是实验2。
+一直降到 embedding_dim = 32，units = 64跟最后run epochs=5才跑起来，但因为太久导致 colab 只保留最长24小时（还在后台），12小时消失前台，最后断线，导致没跑完，100元终究是错付，1个RNN epochs跑2小时，不想再跑，有兴趣看两个模型比较结果可以参考中翻英_RNN_Transformer.ipynb。所以只实作Transformer部分，也就是实验2，不过也是花了我少钱。
 
 实验2步驟：
 
@@ -33,3 +33,15 @@
 
         3.评估Transformer模型的性能，并演示它的翻译结果。
 
+结果：
+
+        我只执行一个epoch  
+
+        loss: 0.2516 - accuracy: 0.9740
+
+        Total params: 22782551 (86.91 MB)
+
+        Trainable params: 22782551 (86.91 MB)
+
+
+        
