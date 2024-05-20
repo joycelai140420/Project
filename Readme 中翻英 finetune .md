@@ -142,7 +142,7 @@ T5Tokenizer介绍
         在这个例子中，t5-small，这是T5模型家族中较小的版本。
         在这个例子中，'bert-base-chinese'是一个基础模型版本，具有较少的参数，但已经足够处理许多任务。
 
-效能分析(硬体 L4 GPU RAM  22.5 GB )
+效能分析(硬体 L4 GPU RAM  22.5 GB ,wmt18，zh-en数据集大小: 251603)
 
 bert-base-chinese预训练的分词器与预训练的t5-small模型
 
@@ -158,18 +158,15 @@ bert-base-chinese预训练的分词器与预训练的t5-small模型
     英文: 
     --------------------
 
-    示例 1 有学到了,,
+    示例 1 有学到了,, 
 
 10 epochs 训练约5hr
 
+![1716213616743](https://github.com/joycelai140420/Project/assets/167413809/b7a894c8-63d4-4238-b272-e87e752802d6)
 
+![1716213640059](https://github.com/joycelai140420/Project/assets/167413809/372aac48-f4d4-4471-a02a-8d66fee31b66)
 
-
-
-
-
-
-
+![1716213669793(1)](https://github.com/joycelai140420/Project/assets/167413809/c6190008-42a1-46f2-af73-2e41d887f1d4)
 
 
 
