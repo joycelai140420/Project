@@ -162,15 +162,24 @@ bert-base-chinese预训练的分词器与预训练的t5-small模型
 
 10 epochs 训练约5hr
 
+![1716213813272](https://github.com/joycelai140420/Project/assets/167413809/1e6a884e-e423-49a9-9bca-5d1207188899)
+
 ![1716213616743](https://github.com/joycelai140420/Project/assets/167413809/b7a894c8-63d4-4238-b272-e87e752802d6)
 
 ![1716213640059](https://github.com/joycelai140420/Project/assets/167413809/372aac48-f4d4-4471-a02a-8d66fee31b66)
 
-![1716213669793(1)](https://github.com/joycelai140420/Project/assets/167413809/c6190008-42a1-46f2-af73-2e41d887f1d4)
-
-
-
-
+    示例 1
+    中文: 今天是个好天气
+    英文: 
+    --------------------
+    示例 2
+    中文: 令人宽心的
+    英文: 
+    --------------------
+    示例 3
+    中文: 1929年还是1989年?
+    英文: 
+    --------------------
 
 
 
