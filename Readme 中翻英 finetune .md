@@ -81,9 +81,9 @@ AutoTokenizer类是Hugging Face Transformers库中的一部分，旨在简化加
     
 
 代码解析：
-
-tokenizer = AutoTokenizer.from_pretrained('bert-base-chinese')
-当前的任务是加载一个预训练的中文BERT分词器，以便将中文文本转换为模型可以处理的token ID。
+    
+    tokenizer = AutoTokenizer.from_pretrained('bert-base-chinese')
+    当前的任务是加载一个预训练的中文BERT分词器，以便将中文文本转换为模型可以处理的token ID。
 
 AutoTokenizer:
 
@@ -119,13 +119,15 @@ T5Tokenizer介绍
     from_pretrained方法用于加载预训练的分词器或模型。它会从Hugging Face的模型库中下载预训练的分词器或模型参数，并进行初始化。
 
 主要参数：
+    
     pretrained_model_name_or_path：预训练模型或分词器的名称或路径。
     force_download：是否强制重新下载模型或分词器（可选）。
     cache_dir：指定缓存目录（可选）。
 
 代码解析：
-tokenizer = T5Tokenizer.from_pretrained('t5-small')
-正在加载一个预训练的T5分词器t5-small，该分词器适用于T5模型。这个分词器将文本转换为模型可以处理的token ID，为后续的模型输入做准备。
+    
+    tokenizer = T5Tokenizer.from_pretrained('t5-small')
+    正在加载一个预训练的T5分词器t5-small，该分词器适用于T5模型。这个分词器将文本转换为模型可以处理的token ID，为后续的模型输入做准备。
 
 
 ============================================================================================================================================
