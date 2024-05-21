@@ -18,6 +18,7 @@
 
   6.使用训练好的模型生成动漫面孔，并显示模型生成后的动漫面孔图片 跟真實圖片進行比較。
 
+
   
 DCGAN（Deep Convolutional Generative Adversarial Network）是一种利用深度卷积神经网络（CNN）来生成图像的生成对抗网络（GAN）架构。
 
