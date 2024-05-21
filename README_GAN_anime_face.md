@@ -75,6 +75,22 @@ DCGAN的架构
 ![image](https://github.com/joycelai140420/Project/assets/167413809/47e6bd7f-974a-4a61-8611-0ef7209b68ba)
 ![image](https://github.com/joycelai140420/Project/assets/167413809/f62a4a79-9770-40ec-a17a-0ee8c63ca4e8)
 ![image](https://github.com/joycelai140420/Project/assets/167413809/79699c33-15af-470f-b160-07e8dbecff53)
+![image](https://github.com/joycelai140420/Project/assets/167413809/3005c242-f723-42ad-ae43-d1fb52562a36)
+![image](https://github.com/joycelai140420/Project/assets/167413809/97ad1331-ff59-420b-a08b-024e024cb0f5)
+![image](https://github.com/joycelai140420/Project/assets/167413809/49e83b21-e39b-42df-b359-376fa03d4325)
+![image](https://github.com/joycelai140420/Project/assets/167413809/db4bd765-120a-4e9c-be50-2c648fa34870)
+![image](https://github.com/joycelai140420/Project/assets/167413809/8abde22e-1190-4921-ad19-237590fcaead)
+![image](https://github.com/joycelai140420/Project/assets/167413809/55449d7a-3670-4432-b972-ea997055b4fd)
+![image](https://github.com/joycelai140420/Project/assets/167413809/6b8c8f34-b2a8-429a-ac99-1ebfbf42ea7e)
+![image](https://github.com/joycelai140420/Project/assets/167413809/c9de4104-9d39-4be9-8729-b40f04c3dacc)
+![image](https://github.com/joycelai140420/Project/assets/167413809/2af3b57f-caef-4f3f-8a53-8414e3ef8e95)
+![image](https://github.com/joycelai140420/Project/assets/167413809/fc19760b-7edc-4bc9-91c6-898e8fcab7b3)
+![image](https://github.com/joycelai140420/Project/assets/167413809/1e48bfb0-e5ca-46f9-ad76-7d4dfb46efd4)
+![image](https://github.com/joycelai140420/Project/assets/167413809/59cf26d2-b82f-47a1-8253-3ffdfae532a0)
+![image](https://github.com/joycelai140420/Project/assets/167413809/84516486-209e-456a-a295-21db13ff518d)
+![image](https://github.com/joycelai140420/Project/assets/167413809/7bf3fe76-57d4-467f-a098-22004c33fbad)
+![image](https://github.com/joycelai140420/Project/assets/167413809/ffe0310e-36a3-4be2-b2e4-1936f822a74d)
+![image](https://github.com/joycelai140420/Project/assets/167413809/87e1da79-c071-4b8b-8bc4-6bace7acb21b)
 
 
 
