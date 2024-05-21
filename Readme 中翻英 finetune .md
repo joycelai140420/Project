@@ -191,8 +191,42 @@ bert-base-chinese预训练的分词器与预训练的t5-small模型
     示例 1跟2 好像学到某些英文字 例如 the 或是某些单字里面的s
 
 
+t5-small预训练的分词器与预训练的t5-small模型
+
+1 epochs
+training_loss=忘了记录
+![043dae4960649972aee7e388ff8369c](https://github.com/joycelai140420/Project/assets/167413809/02dff06d-b5c0-416f-8b28-3946d792e2b5)
 
 
+
+10 epochs 训练约4.5hr
+
+![1716294560899](https://github.com/joycelai140420/Project/assets/167413809/c0b647dc-e19d-469a-a542-427865fc6841)
+
+    示例 1
+    中文: 巴黎-随着经济危机不断加深和蔓延，整个世界一直在寻找历史上的类似事件希望有助于我们了解目前正在发生的情况。
+    英文: .
+    --------------------
+    示例 2
+    中文: 一开始，很多人把这次危机比作1982年或1973年所发生的情况，这样得类比是令人宽心的，因为这两段时期意味着典型的周期性衰退。
+    英文: As a result, in 1982 and 1973, the United States, the United States, the United States, and the United States, the United States, the United States, and the United Kingdom, the United States, the United States, and the United Kingdom, the United States, the United States, and the United Kingdom, the United States, the United States, and the United Kingdom, the United States, the United Kingdom, and the United Kingdom, the United States, the United States, and the United Kingdom, have been unable to achieve their goals
+    --------------------
+    示例 3
+    中文: 今天是个好天气
+    英文: But this is not the case.
+    --------------------
+    示例 4
+    中文: 令人宽心的
+    英文: But this is not the case.
+    --------------------
+    示例 5
+    中文: 1929年还是1989年?
+    英文: What happened in 1929 and 1989?
+    --------------------
+    示例 6
+    中文: 巴黎
+    英文: But this is not the case.
+    --------------------
 
 
 
