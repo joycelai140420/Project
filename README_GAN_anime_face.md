@@ -77,8 +77,8 @@ DCGAN的架构
 
 
 
-
-
+^^
+代码详见：GAN_anime_face.ipynb
 
 
 
