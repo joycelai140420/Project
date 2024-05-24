@@ -162,17 +162,9 @@ finetune bert的步骤：
             Question: 我生日是？
             Answer: 23
 
-            接下来是截取SQuAD v2.0数据集
 
-            context="Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10 to earn their third Super Bowl title. The game was played on February 7, 2016, at Levi's Stadium in Santa Clara, California, the home stadium of the San Francisco 49ers."
-            Question: Who won Super Bowl 50?
-            Answer: denver broncos
-
-            context="The Moon is Earth's only natural satellite. It is the fifth-largest satellite in the Solar System and the largest and most massive relative to its parent planet. The Moon is thought to have formed approximately 4.5 billion years ago, not long after Earth. The most widely accepted explanation is that the Moon formed from the debris left over after a giant impact between Earth and a Mars-sized body called Theia."
-            Question: What is the most widely accepted explanation for the Moon's formation?
-            Answer: theia
-
-
+总结：
+很难评断，finetune bert多一点训练跟资料量，表现应该比较好，Meta-Llama-3-8B-Instruct是因为已经获得大量资料进行训练，所以在回答上都不错，但遇到没训练过的，如生日题，就回答错，但大部分都不错。
 
 tips:
     
