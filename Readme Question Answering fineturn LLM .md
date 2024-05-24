@@ -1,6 +1,6 @@
 应用： Compare the performance of finetune bert and llama3 and Qwen in Question Answering
 
-步骤：
+finetune bert的步骤：
 
   1.数据准备：挂载Google Drive，下载并解压数据集。
 
