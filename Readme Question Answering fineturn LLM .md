@@ -24,7 +24,7 @@ finetune bert的步骤：
 
   11.将保存的模型进行简单的QA问答。
 
-参数量:（bert-base-uncased胜）
+参数量:
 
     Qwen1.5-7B-Chat：大约 70 亿（Billion）个参数。
     Meta-Llama-3-8B-Instruct：大约 80 亿（Billion）个参数。
