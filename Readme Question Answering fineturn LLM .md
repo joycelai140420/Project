@@ -50,7 +50,7 @@ finetune bert的步骤：
     loss :
     蓝色是Epoch 1 ，橘色是Epoch 2 ,灰色是Epoch 3 
 
-    ![image](https://github.com/joycelai140420/Project/assets/167413809/2e388bd7-e7c9-402a-a79b-78c01b3b0da8)
+![image](https://github.com/joycelai140420/Project/assets/167413809/2e388bd7-e7c9-402a-a79b-78c01b3b0da8)
 
 
 
