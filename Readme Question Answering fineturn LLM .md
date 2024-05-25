@@ -48,7 +48,9 @@ finetune bert的步骤：
 
 
     loss :
+    蓝色是Epoch 1 ，橘色是Epoch 2 ,灰色是Epoch 3 
 
+    ![image](https://github.com/joycelai140420/Project/assets/167413809/2e388bd7-e7c9-402a-a79b-78c01b3b0da8)
 
 
 
@@ -162,9 +164,130 @@ finetune bert的步骤：
             Question: 我生日是？
             Answer: 23
 
+实验 Qwen/Qwen1.5-7B-Chat：參考代碼QA_Qwen_1.ipynb
+
+     硬体：
+            L4
+     內存：
+            因为懒，所以這裡只採用call Qwen/Qwen1.5-7B-Chat模型不進行finetune，后面再看看进行finetune。
+            
+    QA回答表现：
+    
+            context = "我最近购买了一台高清电视机，但不知道如何进行护理。"
+            Question: 高清电视机怎么进行护理？
+            Answer: 高清电视机的护理主要是为了保持其良好的显示效果和延长使用寿命，以下是一些基本的护理建议：
+
+            1. **清洁表面**：
+            - 使用专用的高清电视清洁布，避免使用含有氨、漂白剂或者研磨性的清洁剂，这些都可能损坏屏幕。
+            - 清洁时轻轻擦拭，不要用力按压或拖拽。
+
+            2. **防尘**：
+            - 定期用软布或者专用的防尘刷清理电视机周围的灰尘，特别是通风口和底座。
+            - 避免在电视机前摆放容易积累灰尘的物品，如书本、花瓶等。
+
+            3. **环境调节**：
+            - 保持观看环境的温度适宜，过高过低都会影响画质，一般来说，18-24℃为宜。
+            - 避免阳光直射，防止屏幕过热。
+
+            4. **避免震动**：
+            - 不要随意移动电视机，尤其是刚买回来的那段时间，应该固定好位置。
+            - 不要在电视上放置重物，以防震动。
+
+            5. **正确开关**：
+            - 关闭电视机时，要按照遥控器的指示操作，避免突然断电对屏幕造成损害。
+
+            6. **定期维护**：
+            - 如果你有保修，可以定期联系专业人员进行深度检查和维护。
+            - 对于智能电视，记得定期更新操作系统和软件，以保持最新功能和安全。
+
+            7. **正确连接与使用**：
+            - 确保所有接线正确且稳固，特别是HDMI线，过松或过紧都可能导致信号问题。
+
+            8. **避免长时间观看**：
+            - 长时间观看后，让电视休息一会儿，减少内部元件的负荷。
+
+            遵循以上步骤，你的高清电视机就能得到很好的保护，保持良好的工作状态。
+
+
+            context = "我计划去旅行，想购买一个背包。"
+            Question: 旅行背包有内外袋吗？
+            Answer: 是的，旅行背包通常会设计有内外袋。内袋通常位于背包的主体部分，用来存放日常用品，如手机、钱包、水瓶、洗漱用品等私人物品，它们通常分隔得较为有序，方便取用。外袋则位于背包的外部，通常有拉链或者魔术贴，可以用来存放外套、雨伞、相机、零食或者其他大的、不常用但又需要随时取用的物品。有些背包还会有专门的电脑仓或者是侧袋，以满足不同物品的收纳需求。此外，现在的旅行背包还会考虑到便携性和舒适性，比如有腰带系统、背部支撑和可调节肩带等设计。在选择背包时，可以根据自己的行程和个人需求来挑选合适的款式。
+            
+            context = "我正在开发一个软件，想知道如何评估测试用例的有效性。"
+            Question: LLM生成测试用例的有效性如何？
+            Answer: LLM (Learning-based Language Model) 本身并不能直接生成测试用例并评估其有效性。然而，你可以利用LLMs来辅助和优化测试用例设计。以下是一些步骤和方法来将LLM与测试用例的有效性评估结合起来：
+
+            1. **需求理解**：
+               - 首先，确保你对软件的功能和业务需求有深入的理解。LLM可以帮助你从用户文档、需求规格书或业务流程中提取关键信息。
+
+            2. **语义分析**：
+               - 使用LLM（如BERT、GPT等）进行文本理解，解析用户故事、功能描述或错误案例，以识别潜在的边界情况和异常情况。
+
+            3. **生成测试场景**：
+               - 利用LLM自动生成可能的输入数据或场景，比如针对特定函数的边界值、正常操作或错误输入。这些场景应覆盖预期的行为和异常情况。
+
+            4. **人工审核**：
+               - 尽管LLM可以生成大量候选，但重要的是人工检查和验证这些场景是否有效，包括是否覆盖所有功能点，是否符合预期逻辑，以及是否具有实际意义。
+
+            5. **性能和覆盖率**：
+               - 评估LLM生成的测试用例在自动化测试工具中的执行效果，比如它们能够覆盖多少代码路径，或者在回归测试中的失败率。
+
+            6. **反馈迭代**：
+               - 根据测试结果调整LLM模型，使其更好地适应你的测试目标。如果某些测试用例效果不佳，可以调整模型的训练数据或参数。
+
+            7. **持续优化**：
+               - LLM是一个动态发展的技术，随着模型的训练和更新，你可能需要定期评估其生成测试用例的效果。
+
+            总的来说，LLM可以作为一个有力的辅助工具，帮助你生成测试用例，但它不能完全取代人工的测试策略和经验。有效的测试用例应该是全面、细致且具有挑战性的，而LLM可以作为其中的一部分，提高测试的效率和质量。
+
+            context = "我在处理一些实例管理问答的任务，需要一些指导。"
+            Question: 如何对实例管理问答测试？
+            Answer: 实例管理问答测试通常涉及以下几个步骤来确保系统的准确性和效率。以下是一些具体的指导：
+
+            1. **明确目标**：首先，你需要明确测试的目标。这可能包括验证系统是否能正确理解用户问题，提供准确的答案，以及处理各种复杂情况等。
+
+            2. **设计测试用例**：创建一个全面的测试案例库，覆盖不同类型的实例，比如基础知识、复杂问题、边缘情况和异常处理。每个案例应包含问题描述、预期答案和可能的输入变体。
+
+            3. **数据准备**：为系统提供各种类型的数据，包括常见问题、罕见问题、模糊不清的问题以及用户可能使用的多种表达方式。
+
+            4. **功能测试**：测试系统的核心功能，如搜索、推荐、过滤、排序等，确保它们在不同实例中的表现一致。
+
+            5. **性能测试**：模拟大量并发用户或大规模数据，检查系统响应速度和稳定性，以评估其在高负载下的表现。
+
+            6. **用户体验测试**：让真实用户或潜在用户进行测试，观察他们在使用过程中的操作流程和反馈，找出可能的人机交互问题。
+
+            7. **错误和异常处理**：测试系统在遇到无效输入、网络中断、服务器故障等情况时的表现，看它如何正确地处理这些问题并给出提示。
+
+            8. **持续集成与持续部署（CI/CD）**：频繁地在开发环境中进行测试，确保每次代码更改都能顺利通过测试。
+
+            9. **数据分析**：收集测试结果，分析系统性能瓶颈和用户反馈，以便改进。
+
+            10. **修订与优化**：根据测试结果调整系统，优化算法或者改进用户界面，以提高服务质量。
+
+            记住，测试是一个迭代的过程，随着系统的不断优化，测试策略也需要随之调整。
+
+            context = "BERT是由Google开发的一种用于自然语言处理的预训练模型。它可以用于各种任务，如问答、文本分类等。"
+            Question: BERT是由谁开发的？
+            Answer: BERT是由Google开发的。
+
+            context = "我生日是2000年1月1日，今年是2023年"
+            Question: 我生日是？
+            Answer: 您的生日是2000年1月1日。
+
+            接下来是截取SQuAD v2.0数据集
+
+            context="Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10 to earn their third Super Bowl title. The game was played on February 7, 2016, at Levi's Stadium in Santa Clara, California, the home stadium of the San Francisco 49ers."
+            Question: Who won Super Bowl 50?
+            Answer: The Denver Broncos won Super Bowl 50. They defeated the Carolina Panthers with a score of 24-10. This victory marked their third Super Bowl title.
+
+            context="The Moon is Earth's only natural satellite. It is the fifth-largest satellite in the Solar System and the largest and most massive relative to its parent planet. The Moon is thought to have formed approximately 4.5 billion years ago, not long after Earth. The most widely accepted explanation is that the Moon formed from the debris left over after a giant impact between Earth and a Mars-sized body called Theia."
+            Question: What is the most widely accepted explanation for the Moon's formation?
+            Answer: The most widely accepted explanation for the Moon's formation is the giant impact theory. According to this theory, around 4.5 billion years ago, a Mars-sized body named Theia collided with Earth. The impact caused a massive amount of debris to be thrown up into space, which eventually coalesced and formed the Moon. This scenario explains the Moon's size, relative mass, and position as a natural satellite orbiting Earth.
+    
+
 
 总结：
-很难评断，finetune bert多一点训练跟资料量，表现应该比较好，Meta-Llama-3-8B-Instruct是因为已经获得大量资料进行训练，所以在回答上都不错，但遇到没训练过的，如生日题，就回答错，但大部分都不错。
+很难评断，假设finetune bert多一点训练跟资料量，表现应该比现在好很多，然Meta-Llama-3-8B-Instruct跟Qwen/Qwen1.5-7B-Chat是因为已经获得大量资料进行训练，所以在回答上都不错，但Meta-Llama-3-8B-Instruct遇到没训练过的，如生日题，就回答错。总体而言我个人感官Qwen/Qwen1.5-7B-Chat中文与英文的理解还有答案都比较让我喜欢。
 
 tips:
     
