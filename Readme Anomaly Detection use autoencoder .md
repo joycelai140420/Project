@@ -1,4 +1,4 @@
-应用：
+应用：（代码参考Anomaly Detection_1.ipynb）
 
     根據需要選擇不同的模型來進行訓練和異常檢測。   
 
@@ -7,19 +7,30 @@
 
 這是一種最基本的自編碼器模型，使用全連接層（線性層）來進行特徵編碼和解碼。
 適用於低維度數據。
+
+![image](https://github.com/joycelai140420/Project/assets/167413809/45464fe8-bfc8-4c72-b6b0-eb53600c6d04)
+
+
 卷積自編碼器（CNN）：
 
 這種自編碼器模型使用卷積層和卷積轉置層進行特徵編碼和解碼。
 對於圖像數據更為適用，因為卷積層可以有效地提取圖像的空間特徵。
+
+![image](https://github.com/joycelai140420/Project/assets/167413809/0dc15566-48c7-43b1-998e-910a749b98d7)
+
 變分自編碼器（VAE）：
 
 這是一種生成模型，它在自編碼器的基礎上引入了概率推斷，用於學習數據的分佈。
 包含編碼器、重新參數化層（用於從高斯分佈中取樣）和解碼器。
+
+![image](https://github.com/joycelai140420/Project/assets/167413809/adbf3da9-d45a-4ed1-90a5-be6fa3132880)
+
 ResNet模型：
 
 ResNet（Residual Network）是一種深度殘差神經網絡，這裡用作特徵提取器。
 在這個代碼中，ResNet被用作編碼器的一部分，從圖像中提取高級特徵，然後通過全連接層進行進一步處理和解碼。
 
+![image](https://github.com/joycelai140420/Project/assets/167413809/c8fc2d79-7a44-4609-8549-ff4a17b082fd)
 
 運作流程：
 
