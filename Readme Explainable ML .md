@@ -23,4 +23,24 @@ Saliency Map
 
     程式範例可參考Saliency Map.py
 
-        
+SmoothGrad
+
+  论文“SmoothGrad: removing noise by adding noise”由Daniel Smilkov, Nikhil Thorat, Been Kim, Fernanda Viégas, Martin Wattenberg撰写，主要讨论了如何通过增加噪声来减少梯度可视化中的噪声，从而提高解释深度学习模型的效果。
+
+    主要方法：
+
+        添加噪声：将输入图像进行多次随机扰动，每次扰动中添加一定量的高斯噪声。
+
+        计算平均梯度：对每个噪声扰动后的图像，计算其相对于损失函数的梯度。将这些梯度进行平均，得到平滑后的显著图。
+
+   从右下图这张图显示了每个像素对分类结果的重要性。颜色越亮的区域表示这些像素对模型的预测结果影响越大。一般来说，红色和黄色区域表示梯度值较高的像素，这些像素对模型的决策有更大贡献。看右下图显著图上亮色（如红色和黄色）区域，这些区域是模型在进行分类时关注的部分。例如，如果图像是某个动物，亮色区域可能对应动物的面部、四肢或其他特征明显的部分。则说明模型的注意力集中在正确的区域。
+
+![image](https://github.com/joycelai140420/Project/assets/167413809/50309f41-925f-40ed-8aa0-bb5319e2e121)
+
+    程式範例可參考SmoothGrad.py
+
+
+
+
+
+
