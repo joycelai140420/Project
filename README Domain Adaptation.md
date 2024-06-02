@@ -42,3 +42,9 @@ Domain Adaptation
 ![image](https://github.com/joycelai140420/Project/assets/167413809/665cd164-65a5-4f28-a5c7-3a863cedfc86)
 
 在论文中ttl loss中是求最小的分类器的loss减去域分类器loss（又或是分类器的loss加上超参数*域分类器loss），总之通过这样的设计，特征提取器最终会学到那些对源域分类任务有用，但对源域和目标域之间的差异不敏感的特征，从而实现域适应的目标。可是特征学到不同域的特征，却没有办法有效的分别开来不同Domain特性。但是这方法从而实现了无监督的域适应。这种方法使得模型在源域数据上表现良好的同时，也能够在目标域数据上保持高效的特征提取和分类能力。
+
+以下是预测出来的结果
+![image](https://github.com/joycelai140420/Project/assets/167413809/a439d362-fabb-493d-8909-753b62346780)
+![image](https://github.com/joycelai140420/Project/assets/167413809/a155e727-c680-4530-b122-7a6e72b9f03c)
+
+
