@@ -14,6 +14,34 @@
 
 假设（游戏动作只有上下），那个动作{S1,上,S2,下,S3,上,....St,下}叫trajectory，每个trajectory里面都不一样有可能是{S1,上,S2,上,S3,上,....St,上}等等，那么一个trajectory会发生几率是多少？（这里也要注意到是可能S1,下一个画面接的也不一定是S2）,因为trajectory是一个随机需要算机率，所以会发生什么Reward还是需要算机率。所以期望值就是穷举所有trajectory每一个机率，那么假设游戏一直都没死的trajectory出现的机率就最大，那么一下就死的trajectory出现的机率就最小。那么我们算出甲trajectory出现的机率再算这个甲trajectory的total Reward，然后把所有甲乙丙丁的total Reward做一个权重算出甲的期望值，当然我们希望期望值是越大越好。（穷举什么什么得到最小或最大等用词就需要用到Gradient）这里我们需要期望值是越大越好，要用max，这就是GradientPolicy。
 
+也就是说你把你的 theta 加上你的 gradient 這一項，那當然前面要有個 learning rate learning rate 其實也是要調的，你要用 ADAM、rmsprop 等等，去調一下，那在實際上做的時候，要套下面這個公式， 首先你要先收集一大堆的 s 跟 a 的 pair，你還要知道這些 s 跟 a，如果實際上在跟環境互動的時候 你會得到多少的 reward， 所以這些資料，你要去收集起來，這些資料怎麼收集呢？ 你就要拿你的 agent，它的參數是 theta，去跟環境做互動， 也就是你拿你現在已經 train 好的那個 agent，先去跟環境玩一下，先去跟那個遊戲互動一下， 那互動完以後，你就會得到一大堆遊戲的紀錄會記錄說，今天先玩了第一場 在第一場遊戲裡面，我們在 state s1，採取 action a1，在 state s2，採取 action a2，要記得說其實今天玩遊戲的時候，是有隨機性的 所以你的 agent 本身是有隨機性的，所以在同樣 state s1，不是每次都會採取 a1，所以你要記錄下來，在 state s1，採取 a1，在 state s2，採取 a2，然後最後呢 整場遊戲結束以後，得到的分數，是 R of tao1，那你还會 sample 到另外一筆 data，也就是另外一場遊戲，在另外一場遊戲裡面 你在第一個 state 採取這個 action，在第二個 state 採取這個 action，在第二個遊戲畫面採取這個 action，然後你 sample 到的，你得到的 reward 是 R of tao2，你有了這些東西以後，你就去把這邊你 sample 到的東西，帶到這個 gradient 的式子裡面，把 gradient 算出來 也就是說你會做的事情是，把這邊的每一個 s 跟 a 的 pair，拿進來，算一下它的 log probability，你計算一下，在某一個 state，採取某一個 action 的 log probability，然後對它取 gradient。然後這個 gradient 前面會乘一個 weight，這個 weight 是什麼？這個 weight 就是会加权算出這場遊戲在某一個 state，採取某一個 action 的 reward，你有了這些以後，你就會去 update 你的 model， 你 update 完你的 model 以後，你回過頭來要重新再去收集你的 data，然後再去收集你的 data，再 update model...那這邊要注意一下，一般 policy gradient，你 sample 的 data 就只會用一次，你把這些 data sample 起來，然後拿去 update 參數，這些 data 就丟掉了 再重新 sample data，才能夠再重新去 update 參數。
+
+![1717640846325](https://github.com/joycelai140420/Project/assets/167413809/cd716c53-753f-481f-914a-d55bc40f2d2d)
+
+那么我们引入baseline是为什么呢？在实作上，可能这场游戏得到最后的结果是不好，不代表里面所有的state採取某个 action都是不好，反之，这场游戏得到最后的结果是好，不代表里面所有的state採取某个 action都是好的，那么我就要引入baseline，在强化学习中，基线是一种用来减少算法在训练过程中不稳定性的技巧。它可以帮助我们的算法更稳定、更快速地找到最好的策略。你可以把基线想象成一个参考点，我们通过它来评估每个动作到底是比平均水平好还是不好。基线的简单计算方法一个简单的基线计算方法是计算多个回合的平均回报。具体来说，就是运行多次游戏，然后计算这些游戏的平均得分，把这个平均得分作为基线。
+
+这个步驟如下：
+    
+    运行多个游戏回合：我们让智能体玩多次游戏（例如10次）。
+    
+    计算每个回合的总回报：对于每个游戏回合，我们计算它的总得分。
+    
+    计算平均回报：把所有回合的总得分相加，然后除以回合的数量，得到平均得分，这就是我们的基线。
+
+接下来我们这个例子中实作（RL_Simple_baseline_PPO.ipynb），我们让智能体玩了10次游戏，计算每次游戏的总得分，并取这些得分的平均值作为基线。基线帮助我们在更新策略时减少波动，使训练过程更加平稳。在这个例子中，我们没有显式地在代码中实现减去基线的步骤，这是因为我们使用的 PPO 算法已经在内部处理了这个问题。
+    tips:
+    选择γ=0.99，使得智能体在很大程度上重视未来的奖励，同时不过分忽略当前的奖励。在许多实际应用中，发现γ=0.99能在各种不同类型的任务中表现良好，因此成为一个常见的默认选择。如果任务需要长期策略（例如投资、规划），可以选择较大的 γ（接近 1）。如果任务更关注短期收益（例如即时反应），可以选择较小的γ（接近 0）。
+    
+https://github.com/joycelai140420/Project/assets/167413809/48f2def0-0c08-4ff5-9c0a-c00c95d8550f
+
+
+
+
+
+
+
+
+
 
 假设我们要跟环境互动的那个agent跟我们要learn agent是同一个的话,这个叫做on-policy。反之，要跟环境互动的那个agent跟我们要learn agent不是同一个的话,这个叫做off-policy。简单来说就是这个agent是边学边玩的叫on-policy。反之，这个agent是透过别人玩来学习的叫off-policy。
 
