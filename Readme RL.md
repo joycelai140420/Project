@@ -35,14 +35,40 @@
 https://github.com/joycelai140420/Project/assets/167413809/48f2def0-0c08-4ff5-9c0a-c00c95d8550f
 
 
+假设我们要跟环境互动的那个agent跟我们要learn agent是同一个的话,这个叫做on-policy。反之，要跟环境互动的那个agent跟我们要learn agent不是同一个的话,这个叫做off-policy。简单来说就是这个agent是边学边玩的叫on-policy。反之，这个agent是透过别人玩来学习的叫off-policy。前面介绍的都是on-policy，现在我们开始介绍一下off-policy。
+
+我们就先从 Q-learning 的简介开始说，那我们说 Q-learning 这种方法，它是 value-based 的方法， 在value based 的方法里面我们 learn 的并不是 policy，我们并不是直接 learn policy， 我们要 learn 的是一个 critic，critic 并不直接采取行为，它想要做的事情是评价现在的行为有多好或者是有多不好。那如果在玩 Atari 游戏的话，state s 是某一个画面 ，看到某一个画面，某一个 state s 的时候，接下来一直玩到游戏结束 ，看累积的 reward 的期望值有多大。
+
+Q-Learning通过不断更新状态-动作值函数（Q值）来逼近最优Q值函数。其更新公式为：
+
+![1717760107800(1)](https://github.com/joycelai140420/Project/assets/167413809/2514ac59-4aac-4b57-b095-699a177effd9)
+Q-Learning的基本概念
+    状态（State, s）：环境的当前配置。
+    
+    动作（Action, a）：智能体在每个状态下可以采取的动作。
+
+    奖励（Reward, r）：智能体在采取某个动作后从环境中获得的反馈。
+
+    Q值（Q-value, Q(s, a)）：在状态 𝑠 下采取动作𝑎 后的期望累计奖励。   
+
+其中：
+    α 是学习率，控制更新的步长。
+    γ 是折扣因子，决定未来奖励的重要性。
+    r 是即时奖励。
+    s′是采取动作 
+    𝑎 后的下一状态。
+    max𝑎′𝑄(𝑠′,𝑎′)表示在状态𝑠′下选择最优动作的Q值。
+
+Q-Learning的步骤
+    初始化Q值表 𝑄(𝑠,𝑎)    为任意值（通常为0）。
+    
+    重复以下步骤直到收敛：
+
+        在当前状态 𝑠下选择动作 𝑎（根据某种策略，如 ϵ-贪婪策略）。
+        执行动作 𝑎，观察奖励 𝑟 和下一个状态𝑠′ 。
+        更新Q值 𝑄(𝑠,𝑎)。
+        更新状态 𝑠←𝑠′。
+
+Q-Learning算法最早由Christopher J.C. Watkins在1989年提出，并在1992年的论文中详细描述。论文题目是："Q-Learning" by Christopher J.C. Watkins and Peter Dayan (1992)。Watkins和Dayan在这篇论文中提出了一种新的强化学习算法，称为Q-Learning。该算法能够在不确定和变化的环境中找到最优策略，而不需要知道环境的状态转移模型。他们通过理论分析和实验验证了Q-Learning的有效性和收敛性。
 
 
-
-
-
-
-
-
-假设我们要跟环境互动的那个agent跟我们要learn agent是同一个的话,这个叫做on-policy。反之，要跟环境互动的那个agent跟我们要learn agent不是同一个的话,这个叫做off-policy。简单来说就是这个agent是边学边玩的叫on-policy。反之，这个agent是透过别人玩来学习的叫off-policy。
-
-然后我们需要知道
