@@ -202,3 +202,18 @@ Rainbow 集成了以下六种增强技术：
     Noisy Nets（噪声网络）
     Distributional Q-learning（分布式Q学习）
 
+Rainbow: Combining Improvements in Deep Reinforcement Learning，这篇论文的核心内容是将上述六种 DQN 增强技术集成到一个统一的框架中，即 Rainbow DQN，并展示了这种集成方法在多种强化学习任务中的优异性能。并通过大量的实验，论文证明了 Rainbow DQN 在 Atari 2600 游戏中的表现优于单独使用任何一种技术的 DQN 方法。
+
+在下图展示了在 57 个 Atari 游戏中，不同算法的中位数人类标准化表现（human-normalized performance）的变化情况。横轴表示训练的帧数（frames），纵轴表示中位数人类标准化表现。图中对比了 Rainbow 算法（彩虹色）、DQN 算法（灰色）和六种已发表的基线算法的表现。Rainbow 的表现在训练到 44 百万帧时，Rainbow 算法超越了所有基线算法。最终表现明显优于其他所有基线算法。
+
+![1717891779104](https://github.com/joycelai140420/Project/assets/167413809/cdad5a8e-90bb-4bd1-aa02-212e335d10b6)
+
+这组图展示了不同算法在 57 个 Atari 游戏中，达到不同人类表现百分比（20%、50%、100%、200% 和 500%）的游戏数量，随时间变化的情况。每个子图表示一种人类表现百分比阈值。第一行，比较 Rainbow 算法和基线算法的表现。第二行，比较 Rainbow 算法和其去除某些组件（ablations）后的表现。从左到右，子图表示从低到高的人类表现百分比阈值：20%、50%、100%、200% 和 500%。每个子图的横轴表示训练的时间（frames），纵轴表示达到该阈值的游戏数量。
+
+观察第一行，Rainbow 在所有阈值上都表现出优于基线算法的性能。随着时间的推移，Rainbow 能在更多的游戏中达到较高的人类表现百分比。
+
+观察第二行，Rainbow 相比于去除某些组件后的版本，表现出明显的优势，表明每个组件对整体性能的贡献。例如，去除 Noisy Nets 或 Prioritized Replay 后的表现明显下降，说明这些技术对最终性能的重要性。
+
+![1717891909470](https://github.com/joycelai140420/Project/assets/167413809/1092e804-bdcf-4ae0-ba45-d0cabce0cfb1)
+
+接下来我们开始实作Rainbow DQN
